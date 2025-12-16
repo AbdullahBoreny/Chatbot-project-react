@@ -4,7 +4,6 @@ import './ChatInput.css';
 import React from 'react';
 
 
-// eslint-disable-next-line react/prop-types
 export function ChatInput({ chatMessages, setChatMessages }) {
   const [inputText, setInputText] = useState('');
 
@@ -12,10 +11,17 @@ export function ChatInput({ chatMessages, setChatMessages }) {
     setInputText(event.target.value);
   }
   function clearMessage() {
-            setChatMessages([])
+            setChatMessages([
+              {message : "Starting fresh!, how can i help you",
+              sender:"robot",
+              id:crypto.randomUUID()
+            }])
+            
+
   }
 
   function sendMessage() {
+    
     const newChatMessages = [
       ...chatMessages,
       {

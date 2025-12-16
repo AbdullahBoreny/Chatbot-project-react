@@ -29,9 +29,9 @@ function App() {
  
   useEffect(() =>{
     Chatbot.addResponses(
-      {"na" : "shut",
+      {
         '%id%': function () {
-          return `Sure here's a unique id:${crypto.randomUUID()}`
+          return `Sure here's a unique id: ${crypto.randomUUID()}`
         }
       }
     )
